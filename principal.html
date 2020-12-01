@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+  	<title>EL DRAGON</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/z.png">
+  	<link rel="stylesheet" type="text/css" href="bbb.css">
+    <link rel="stylesheet" type="text/css" href="aaa.css">
+  </head>
+<body onLoad="alert('Bienvenido a la Página Web. Registrate o inicia secion para comprar');" onUnLoad="confirm('Gracias por tu visita, espero que no sea la última');">
+<?php
+    include("congif.php");
+    session_start();
+        if(isset($_SESSION['username']))
+        {
+?>
+<style type="text/css">
+  .titulo {
+  font-size: 25px;
+  background: #000000;
+  background: -webkit-linear-gradient(red 3%, #000000 10%, #FFFFFF 90%, blue);
+  padding: 10px;
+  color: blue;
+  width: 98%;
+  height: 100px;
+  border: 20px -webkit-linear-gradient(red 50%,blue 50%);
+}
+  .pie {
+  font-size: 15px;
+  background: #000000;
+  background: -webkit-linear-gradient( #000000 10%, #FFFFFF 90%);
+  padding: 10px;
+  color: black;
+  width: 98%;
+  }
+</style>
+<div class="titulo">
+	<h1>EL DRAGON</h1>
+</div>
+<hr>
+<table border="0" width="100%"><tr><td>
+<div style="width:300px; height:150px;">
+    <object type="application/x-shockwave-flash" data="http://swf.yowindow.com/yowidget3.swf" width="300" height="150">
+      <param name="movie" value="http://swf.yowindow.com/yowidget3.swf"/>
+      <param name="allowfullscreen" value="true"/>
+      <param name="wmode" value="opaque"/>
+      <param name="bgcolor" value="#FFFFFF"/>
+      <param name="flashvars" 
+      value="location_id=gn:3530597&amp;location_name=Ciudad%20de%20M%C3%A9xico&amp;landscape=valley&amp;time_format=24&amp;unit_system=metric&amp;lang=es&amp;background=#FFFFFF&amp;mini_temperature=true&amp;mini_time=false&amp;mini_locationBar=true&amp;mini_momentBar=true&amp;mini_action=window&amp;copyright_bar=false"
+    />
+    </object>
+</div></td>
+<td>
+<script language="javascript">
+// Muestra la hora y la fecha, actualizandas cada segundo, en una caja de texto
+ 
+ 
+//Muestra segundos
+function muestraSeg()
+  {
+  hoyseg=new Date();
+  document.formi.seg.value=hoyseg.getSeconds();
+  setTimeout("muestraSeg()",1000);
+  }
+ 
+//Muestra minutos
+function muestraMin()
+  {
+  hoymin=new Date();
+  document.formi.min.value=hoymin.getMinutes();
+  setTimeout("muestraMin()",1000);
+  }
+ 
+//Muestra horas
+function muestraHour()
+  {
+  hoyhour=new Date();
+  document.formi.hour.value=hoyhour.getHours();
+  setTimeout("muestraHour()",1000);
+  }
+ 
+//Muestra dia
+function muestraDay()
+  {
+  hoyday=new Date();
+  document.formi.day.value=hoyday.getDate();
+  setTimeout("muestraDay()",1000);
+  }
+ 
+//Muestra mes
+function muestraMon()
+  {
+  hoymonth=new Date();
+  document.formi.month.value=hoymonth.getMonth();
+  
+  if(document.formi.month.value==0){
+   document.formi.month.value="Enero"
+  }else if(document.formi.month.value==1){
+   document.formi.month.value="Febrero"
+  }else if(document.formi.month.value==2){
+   document.formi.month.value="Marzo"
+  }else if(document.formi.month.value==3){
+   document.formi.month.value="Abril"
+  }else if(document.formi.month.value==4){
+   document.formi.month.value="Mayo"
+  }else if(document.formi.month.value==5){
+   document.formi.month.value="Junio"
+  }else if(document.formi.month.value==6){
+   document.formi.month.value="Julio"
+  }else if(document.formi.month.value==7){
+   document.formi.month.value="Agosto"
+  }else if(document.formi.month.value==8){
+   document.formi.month.value="Septiembre"
+  }else if(document.formi.month.value==9){
+   document.formi.month.value="Octubre"
+  }else if(document.formi.month.value==10){
+   document.formi.month.value="Noviembre"
+  }else{
+   document.formi.month.value="Diciembre"
+  }
+  
+  setTimeout("muestraMon()",1000);
+  }
+ 
+//Muestra semana
+function muestraSem()
+  {
+  hoysem=new Date();
+  document.formi.sem.value=hoysem.getDay();
+  
+  if(document.formi.sem.value==0){
+   document.formi.sem.value="Domingo"
+  }else if(document.formi.sem.value==1){
+   document.formi.sem.value="Lunes"
+  }else if(document.formi.sem.value==2){
+   document.formi.sem.value="Martes"
+  }else if(document.formi.sem.value==3){
+   document.formi.sem.value="Miercoles"
+  }else if(document.formi.sem.value==4){
+   document.formi.sem.value="Jueves"
+  }else if(document.formi.sem.value==5){
+   document.formi.sem.value="Viernes"
+  }else{
+   document.formi.sem.value="Sabado"
+  }
+  setTimeout("muestraSem()",1000);
+  }
+ 
+//Muestra ano
+function muestraYear()
+  {
+  hoyyear=new Date();
+  document.formi.year.value=hoyyear.getFullYear();
+  
+  if ((document.formi.hour.value==0)&&(document.formi.min.value==0)&&(document.formi.seg.value==0)&&(document.formi.day.value==1)&&(document.formi.month.value=="Enero"))
+    {
+    alert("Feliz ano " + document.formi.year.value);
+    return true;
+    }
+  setTimeout("muestraYear()",1000);
+  }
+ 
+    </script>
+ 
+<!-- Muestra el formulario con la hora y la fecha -->
+<FORM name="formi">
+<P align="right">Fecha:
+<INPUT type="text" name="sem" size=8> ,
+<INPUT type="text" name="day" size=1> de
+<INPUT type="text" name="month" size=9> de
+<INPUT type="text" name="year" size=3>&nbsp;&nbsp;&nbsp; Reloj:
+<INPUT type="text" name="hour" size=1> :
+<INPUT type="text" name="min" size=1> :
+<INPUT type="text" name="seg" size=1>&nbsp;&nbsp; </P>
+ 
+<SCRIPT language="javascript">
+muestraSeg();
+muestraMin();
+muestraHour();
+ 
+muestraSem();
+muestraDay();
+muestraMon();
+muestraYear();
+</SCRIPT>
+</FORM></td></tr></table>
+
+<hr>
+<div class="wrap">
+<span class="decor"></span>
+<nav>
+  <ul class="primary">
+    <li>
+      <a href="principal.html">Inicio</a>
+    </li>
+    <li>
+      <a href="">Productos</a>
+      <ul class="sub">
+        <li><a href="a.html">Nes</a></li>
+        <li><a href="b.html">MegaMan</a></li>
+        <li><a href="c.html">PlayStation</a></li>
+        <li><a href="d.html">Neo Geo</a></li>
+      </ul>
+    </li>
+     <li>
+      <a href="login.php" name="cerrarsesion">Cerrar Sesion
+    <form method="POST" action="">
+    </form>
+    <?php
+
+        if(isset($_POST['cerrarsesion']))
+        {
+            session_destroy();
+            header('location: principal.html');
+        }
+
+    ?></a>
+    </li>
+  </ul>
+</nav>
+</div><br><br><br>
+
+<!--script-->
+    <figure>
+      <table border="0" width="100%">
+      	<tbody>
+      		<tr>
+      			<td>
+      				<hr id="null" />
+      			</td>
+      		</tr>
+      		<tr>
+      			<td>
+      				<p align="center" style="font-size: 20pt">
+      					<span><strong>PRODUCTOS</strong></span></p>
+      			</td>
+      		</tr>
+      		<tr>
+      			<td align="center">
+      				<hr id="null" />
+      				<table width="90%">
+      					<tbody>
+      						<tr>
+      							<td height="158" width="50">
+      								<img onClick="scroll_backward();" src="img/flecha1.png" height="100px" width="100px"/></td>
+                                      <td align="center" width="130px">								<a href="a.html" id="ah1" target="_blank"><ul><li><img height="200px" width="200px" name="pic1" src="img/a.png" /></li></ul> </a></td>
+                                      <td align="center" width="130px">								<a href="a.html" id="ah2" target="_blank"><ul><li><img height="200px" width="200px" name="pic2" src="img/b.png" /></li></ul> </a></td>
+                                      <td align="center" width="130px">								<a href="b.html" id="ah3" target="_blank"><ul><li><img height="200px" width="200px" name="pic3" src="img/e.png" /></li></ul> </a></td>
+                                      <td align="center" width="130px">								<a href="d.html" id="ah4" target="_blank"><ul><li><img height="200px" width="200px" name="pic4" src="img/l.png" /></li></ul> </a></td>
+                                      <td align="center" width="130px">								<a href="c.html" id="ah5" target="_blank"><ul><li><img height="200px" width="200px" name="pic5" src="img/s.png" /></li></ul> </a></td>
+                                      <td width="50px">
+                        <img onclick="scroll_forward();" src="img/flecha.png"height="100px" width="100px"/></td>						</tr>					</tbody>				</table>			</td>		</tr>		<tr>			<td>				<hr id="null" />			</td>		</tr>		<tr>			<td>				<p><script type='text/javascript'>
+      				document.getElementById('cloakb48e2da3308088e98fee357c8e699f12').innerHTML = '';
+      				var prefix = 'ma' + 'il' + 'to';
+      				var path = 'hr' + 'ef' + '=';
+      				var addyb48e2da3308088e98fee357c8e699f12 = 'carrauro' + '@';
+      				addyb48e2da3308088e98fee357c8e699f12 = addyb48e2da3308088e98fee357c8e699f12 + 'hotmail' + '.' + 'com';
+      				var addy_textb48e2da3308088e98fee357c8e699f12 = '<span style="font-family: verdana,geneva">carrarauro' + '@' + 'hotmail' + '.' + 'com</span>';document.getElementById('cloakb48e2da3308088e98fee357c8e699f12').innerHTML += '<a ' + path + '\'' + prefix + ':' + addyb48e2da3308088e98fee357c8e699f12 + '\'>'+addy_textb48e2da3308088e98fee357c8e699f12+'<\/a>';
+      		</script></p>			</td>		</tr>	</tbody></table><script language="javascript"> x4 = new Image (); x5 = new Image (); x6 = new Image (); x7 = new Image(); x8 = new Image(); x9 = new Image(); y0 = new Image(); y1 = new Image(); var y2 = new Image (); var y3 = new Image ();  x4.src="img/a.png", x5.src="img/b.png", x6.src="img/e.png", x7.src="img/l.png", x8.src="img/s.png", x9.src = "img/j.png", y0.src = "img/m.png", y1.src = "img/t.png", y2.src ="img/x.png", y3.src ="img/c.png";var portadas = new Array(x4, x5, x6, x7, x8, x9, y0, y1, y2, y3 ); var enlaces = new Array("a.html","a.html","b.html","d.html","c.html","d.html","d.html","c.html","c.html","a.html"); var counter = 0; var counter1 = 1; var counter2 = 2; var counter3 = 3; var counter4 = 4; var end = portadas.length - 1; function scroll_forward() { if ( counter4 == end ) { counter=0; counter1=1; counter2=2; counter3=3; counter4=4; } else { counter++; counter1++; counter2++; counter3++; counter4++; } document.pic1.src = portadas[counter].src; document.getElementById("ah1").href = enlaces[counter]; document.pic2.src = portadas[counter1].src; document.getElementById("ah2").href = enlaces[counter1]; document.pic3.src = portadas[counter2].src; document.getElementById("ah3").href = enlaces[counter2]; document.pic4.src = portadas[counter3].src; document.getElementById("ah4").href = enlaces[counter3]; document.pic5.src = portadas[counter4].src; document.getElementById("ah5").href = enlaces[counter4]; } function scroll_backward() { if ( counter == 0 ) { counter4=end; counter3=end-1; counter2=end-2; counter1=end-3; counter=end-4; } else { counter--; counter1--; counter2--; counter3--; counter4--; } document.pic1.src = portadas[counter].src; document.getElementById("ah1").href = enlaces[counter]; document.pic2.src = portadas[counter1].src; document.getElementById("ah2").href = enlaces[counter1]; document.pic3.src = uportadas[counter2].src; document.getElementById("ah3").href = enlaces[counter2]; document.pic4.src = portadas[counter3].src; document.getElementById("ah4").href = enlaces[counter3]; document.pic5.src = portadas[counter4].src; document.getElementById("ah5").href = enlaces[counter4]; } </script><p>
+    </figure>
+<!--juegos-->
+<center><table><tr><td>
+<div class="hover"><center>
+  <a href="mario">
+  <h1>Mario Bros</h1>
+  <img src="img/personaje2.png"></center>
+</a></div></td><td>
+<div class="hover"><center>
+  <a href="flapyarts">vamos juega
+  <h1>Flapy arts</h1>
+  <img src="img/personaje.png"></center>
+</a></div></td><td>
+<div class="hover"><center>
+  <a href="pacman">
+  <h1>Pac-man</h1>
+  <img src="img/personaje3.png"></center>
+</a></div></td></tr></table></center><br>
+    <hr>
+<footer class="pie"><b>
+	Derechos Reservados &copy; EL DRAGON
+</b></footer>
+</body>
+</html>

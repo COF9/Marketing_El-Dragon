@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+	<title>Nes</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/z.png">
+    <link rel="stylesheet" type="text/css" href="bbb.css">
+    <link rel="stylesheet" type="text/css" href="aaa.css">
+</head>
+<body>
+<style type="text/css">
+  .titulo {
+  font-size: 25px;
+  background: #000000;
+  background: -webkit-linear-gradient(red 3%, #000000 10%, #FFFFFF 90%, blue);
+  padding: 10px;
+  color: blue;
+  width: 98%;
+  height: 100px;
+  border: 20px -webkit-linear-gradient(red 50%,blue 50%);
+}
+  .pie {
+  font-size: 15px;
+  background: #000000;
+  background: -webkit-linear-gradient( #000000 10%, #FFFFFF 90%);
+  padding: 10px;
+  color: black;
+  width: 98%;
+  }
+</style>
+<div class="titulo">
+  <h1>EL DRAGON</h1>
+</div>
+<hr>
+<table border="0" width="100%"><tr><td>
+<div style="width:300px; height:150px;">
+    <object type="application/x-shockwave-flash" data="http://swf.yowindow.com/yowidget3.swf" width="300" height="150">
+      <param name="movie" value="http://swf.yowindow.com/yowidget3.swf"/>
+      <param name="allowfullscreen" value="true"/>
+      <param name="wmode" value="opaque"/>
+      <param name="bgcolor" value="#FFFFFF"/>
+      <param name="flashvars" 
+      value="location_id=gn:3530597&amp;location_name=Ciudad%20de%20M%C3%A9xico&amp;landscape=valley&amp;time_format=24&amp;unit_system=metric&amp;lang=es&amp;background=#FFFFFF&amp;mini_temperature=true&amp;mini_time=false&amp;mini_locationBar=true&amp;mini_momentBar=true&amp;mini_action=window&amp;copyright_bar=false"
+    />
+    </object>
+</div></td>
+<td>
+<script language="javascript">
+// Muestra la hora y la fecha, actualizandas cada segundo, en una caja de texto
+ 
+ 
+//Muestra segundos
+function muestraSeg()
+  {
+  hoyseg=new Date();
+  document.formi.seg.value=hoyseg.getSeconds();
+  setTimeout("muestraSeg()",1000);
+  }
+ 
+//Muestra minutos
+function muestraMin()
+  {
+  hoymin=new Date();
+  document.formi.min.value=hoymin.getMinutes();
+  setTimeout("muestraMin()",1000);
+  }
+ 
+//Muestra horas
+function muestraHour()
+  {
+  hoyhour=new Date();
+  document.formi.hour.value=hoyhour.getHours();
+  setTimeout("muestraHour()",1000);
+  }
+ 
+//Muestra dia
+function muestraDay()
+  {
+  hoyday=new Date();
+  document.formi.day.value=hoyday.getDate();
+  setTimeout("muestraDay()",1000);
+  }
+ 
+//Muestra mes
+function muestraMon()
+  {
+  hoymonth=new Date();
+  document.formi.month.value=hoymonth.getMonth();
+  
+  if(document.formi.month.value==0){
+   document.formi.month.value="Enero"
+  }else if(document.formi.month.value==1){
+   document.formi.month.value="Febrero"
+  }else if(document.formi.month.value==2){
+   document.formi.month.value="Marzo"
+  }else if(document.formi.month.value==3){
+   document.formi.month.value="Abril"
+  }else if(document.formi.month.value==4){
+   document.formi.month.value="Mayo"
+  }else if(document.formi.month.value==5){
+   document.formi.month.value="Junio"
+  }else if(document.formi.month.value==6){
+   document.formi.month.value="Julio"
+  }else if(document.formi.month.value==7){
+   document.formi.month.value="Agosto"
+  }else if(document.formi.month.value==8){
+   document.formi.month.value="Septiembre"
+  }else if(document.formi.month.value==9){
+   document.formi.month.value="Octubre"
+  }else if(document.formi.month.value==10){
+   document.formi.month.value="Noviembre"
+  }else{
+   document.formi.month.value="Diciembre"
+  }
+  
+  setTimeout("muestraMon()",1000);
+  }
+ 
+//Muestra semana
+function muestraSem()
+  {
+  hoysem=new Date();
+  document.formi.sem.value=hoysem.getDay();
+  
+  if(document.formi.sem.value==0){
+   document.formi.sem.value="Domingo"
+  }else if(document.formi.sem.value==1){
+   document.formi.sem.value="Lunes"
+  }else if(document.formi.sem.value==2){
+   document.formi.sem.value="Martes"
+  }else if(document.formi.sem.value==3){
+   document.formi.sem.value="Miercoles"
+  }else if(document.formi.sem.value==4){
+   document.formi.sem.value="Jueves"
+  }else if(document.formi.sem.value==5){
+   document.formi.sem.value="Viernes"
+  }else{
+   document.formi.sem.value="Sabado"
+  }
+  setTimeout("muestraSem()",1000);
+  }
+ 
+//Muestra ano
+function muestraYear()
+  {
+  hoyyear=new Date();
+  document.formi.year.value=hoyyear.getFullYear();
+  
+  if ((document.formi.hour.value==0)&&(document.formi.min.value==0)&&(document.formi.seg.value==0)&&(document.formi.day.value==1)&&(document.formi.month.value=="Enero"))
+    {
+    alert("Feliz ano " + document.formi.year.value);
+    return true;
+    }
+  setTimeout("muestraYear()",1000);
+  }
+ 
+    </script>
+ 
+<!-- Muestra el formulario con la hora y la fecha -->
+<FORM name="formi">
+<P align="right">Fecha:
+<INPUT type="text" name="sem" size=8> ,
+<INPUT type="text" name="day" size=1> de
+<INPUT type="text" name="month" size=9> de
+<INPUT type="text" name="year" size=3>&nbsp;&nbsp;&nbsp; Reloj:
+<INPUT type="text" name="hour" size=1> :
+<INPUT type="text" name="min" size=1> :
+<INPUT type="text" name="seg" size=1>&nbsp;&nbsp; </P>
+ 
+<SCRIPT language="javascript">
+muestraSeg();
+muestraMin();
+muestraHour();
+ 
+muestraSem();
+muestraDay();
+muestraMon();
+muestraYear();
+</SCRIPT>
+</FORM></td></tr></table>
+
+<hr>
+<div class="wrap">
+<span class="decor"></span>
+<nav>
+  <ul class="primary">
+    <li>
+      <a href="principal.html">Inicio</a>
+    </li>
+    <li>
+      <a href="">Productos</a>
+      <ul class="sub">
+        <li><a href="a.html">Nes</a></li>
+        <li><a href="b.html">MegaMan</a></li>
+        <li><a href="c.html">PlayStation</a></li>
+        <li><a href="d.html">Neo Geo</a></li>
+      </ul>
+    </li>
+     <li>
+      <a href="login.php" name="cerrarsesion">Cerrar Sesion
+    <form method="POST" action="">
+    </form>
+    <?php
+
+        if(isset($_POST['cerrarsesion']))
+        {
+            session_destroy();
+            header('location: principal.html');
+        }
+
+    ?></a>
+    </li>
+  </ul>
+</nav>
+</div><br><br><br>
+<style type="text/css">
+    .slider { 
+  width: 35%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider ul {
+  display: flex;
+  padding: 0;
+  width: 300%;
+  
+  animation: cambio 15s infinite alternate linear;
+}
+
+.slider li {
+  width: 100%;
+  list-style: none;
+  overflow: hidden;
+}
+
+.slider img {
+  width: 90%;
+}
+
+@keyframes cambio {
+  0% {margin-left: 0;}
+  20% {margin-left: 0;}
+  
+  25% {margin-left: -100%;}
+  45% {margin-left: -100%;}
+  
+  50% {margin-left: -200%;}
+  70% {margin-left: -200%;}
+  }
+</style>
+<div class="slider">
+      <ul>
+        <li>
+  <img src="img/a.png">
+ </li>
+        <li>
+  <img src="img/b.png">
+</li>
+        <li>
+  <img src="img/c.png">
+</li>
+      </ul>
+    </div>
+    <table text-align: "center">
+      <tr>
+        <td><p align="rigth"><backquote>Conoce este paquete de la nes<br> !!Compralo es muy barrato¡¡<br> trae varios tipos de juegos aproximadamente 100 juegos o + mucho + lo instalas en tu computadora y ponte a disfrutar y recordar buenos momento te cuesta $50 pesos mexicanos<br></p></td>
+      </tr>
+      <tr>
+      <td>
+    <form name="form1" method="post" action="a.php">
+    <p>
+      <label for="num1"></label>
+      <input type="text" name="num1" id="num1">
+      <select name="pago" id="pago">
+        <option>master card</option>
+        <option>visa</option>
+        <option>paypal</option>
+      </select>
+    </p>
+    <p>
+      <input type="Submit" name="button" id=" button"
+      value="Enviar" onclick="prueba">
+    </p>
+  </form>
+  <p>&nbsp;</p>
+      </td>
+      </tr>
+    </table><hr>
+    <!--juegos-->
+<center><table><tr><td>
+<div class="hover"><center>
+  <a href="mario">
+  <h1>Mario Bros</h1>
+  <img src="img/personaje2.png"></center>
+</a></div></td><td>
+<div class="hover"><center>
+  <a href="flapyarts">vamos juega
+  <h1>Flapy arts</h1>
+  <img src="img/personaje.png"></center>
+</a></div></td><td>
+<div class="hover"><center>
+  <a href="pacman">
+  <h1>Pac-man</h1>
+  <img src="img/personaje3.png"></center>
+</a></div></td></tr></table></center>
+    <hr>
+<footer class="pie"><b>
+  Derechos Reservados &copy; EL DRAGON
+</b></footer> 
+</body>
+</html>
